@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import { GrLike } from "react-icons/gr";
+import { AiFillLike } from "react-icons/ai";
+
 
 export default function GaleryImg(props){
   return(
@@ -13,7 +15,8 @@ export default function GaleryImg(props){
           priority
           
         />
-        <button onClick={()=>alert} className='float-right'><GrLike /></button>
+        
+        <button onClick={()=>props.toggleLike(props.id)} className='float-right'>{props.isLike?<AiFillLike/>:<GrLike />}</button>
       </div>
   )
 }

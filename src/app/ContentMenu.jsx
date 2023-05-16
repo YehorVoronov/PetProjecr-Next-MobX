@@ -6,7 +6,7 @@ export default function ContentMenu() {
   <main className='shadow bg-black text-white grid bg-black- justify-center'>    
             
             <div className='space-x-4' >
-           <Link href="#Body/Galery">Galery</Link>
+           <Link href="/">Galery</Link>
            <Link href="Body/about">About</Link>
            <Link href="Body/likes">Likes</Link>
            <Link href="Body/following">Following</Link>
