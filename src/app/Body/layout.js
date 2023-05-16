@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
       <Header/>
       <Intro/>
       <ContentMenu/>
-      <div>{children}</div>
+      <div style={{ backgroundImage: "url('https://avatars.mds.yandex.net/i?id=2954b72a8da82a2d6e2e38b556900b066ce5aeab-9147982-images-thumbs&n=13')", backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}  className='  bg-blgreen-200 '>{children}</div>
     </html>
   )
 }
