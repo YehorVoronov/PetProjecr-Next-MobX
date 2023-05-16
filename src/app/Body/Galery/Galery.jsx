@@ -15,8 +15,8 @@ export default observer(function Galery() {
 
   return (
     <div>
-      <div>carousel</div>
-      <div className=' flex flex-wrap justify-center'>
+      
+      <div className='pt-4 flex flex-wrap justify-center'>
         {photos.map(e => (
           <GaleryImg
             key={e.id}
