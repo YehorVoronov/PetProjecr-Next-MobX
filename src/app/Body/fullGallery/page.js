@@ -28,8 +28,8 @@ export default function FullGallery(){
   return(
     <div>
       
-      <Carousel photos={photos} />
-      
+      {/* <Carousel photos={photos} />
+       */}
       <Galery/>
       
     </div>
