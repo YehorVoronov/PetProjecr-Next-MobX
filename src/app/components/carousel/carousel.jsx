@@ -1,51 +1,31 @@
-"use client"
-import React, { useState } from 'react';
-import { observer } from "mobx-react-lite";
+import React from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
-const Carousel = ({ photos }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const prevSlide = () => {
-    setActiveIndex((prevIndex) =>
-      prevIndex === 0 ? photos.length - 1 : prevIndex - 1
-    );
-  };
-
-  const nextSlide = () => {
-    setActiveIndex((prevIndex) =>
-      prevIndex === photos.length - 1 ? 0 : prevIndex + 1
-    );
+const Carousel = (props) => {
+  const settings = {
+    dots: true, // Show navigation dots
+    infinite: true, // Allow infinite loop
+    speed: 500, // Transition speed in milliseconds
+    slidesToShow: 1, // Number of slides to show at once
+    slidesToScroll: 1, // Number of slides to scroll at once
   };
 
   return (
-    <div className="pt-[80px] pb-[80px] relative z-10">
-      <div className="overflow-hidden">
-        <div className="flex transition-transform duration-300 ease-in-out">
-          {photos.map((photos, index) => (
-            <img
-              key={index}
-              src={photos.src}
-              alt={photos.alt}
-              className={`${
-                index === activeIndex ? 'opacity-100' : 'opacity-0'
-              } w-full flex-none transition-opacity duration-300 ease-in-out`}
-            />
-          ))}
+    <Slider {...settings}>
+      {/* Add your carousel slides here */}
+      {props.photos.map((photo, index) => (
+        <div key={index} className=" full-screen-image">
+          <img
+            src={photo.src}
+            alt={photo.alt}
+            className="w-[100%]"
+          />
         </div>
-      </div>
-      <button
-        className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-2 rounded-l shadow-md hover:bg-gray-700 focus:outline-none"
-        onClick={prevSlide}
-      >
-        Previous
-      </button>
-      <button
-        className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-2 rounded-r shadow-md hover:bg-gray-700 focus:outline-none"
-        onClick={nextSlide}
-      >
-        Next
-      </button>
-    </div>
+      ))}
+      
+    </Slider>
   );
 };
 

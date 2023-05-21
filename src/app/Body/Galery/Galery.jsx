@@ -6,7 +6,7 @@ import GaleryImg from './GaleryImg';
 import { observer } from "mobx-react-lite";
 import PhotosStore from "../../components/storeMobX/photos"
 
-export default observer(function Galery() {
+export default function Galery() {
   const { photos } = PhotosStore;
 
   const handleToggleLike = (id) => {
@@ -33,7 +33,7 @@ export default observer(function Galery() {
       </div>
     </div>
   );
-});
+};
 // let imgState=[
   //   {src:"/Cyprus-napa-caves.png",alt:"cyprus",width:200,height:48},
   //   {src:"/prague.jpeg",alt:"prague.jpeg",width:200,height:48},
